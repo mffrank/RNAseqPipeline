@@ -7,9 +7,8 @@ reference=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/da
 # Genome annotation File (full path)
 annotation=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/Human_genome/GRCh38/Gencode_v25/gencode.v25.primary_assembly.annotation.gtf
 #Fastq input Files (do not need to be trimmed), if single-end reads second file is ignored (full path)
-in_fq_1=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/HeLa/RNA_seq/Raw_sequences/Yansheng_Hela-8_AGTTCC_L002_R1_001.fastq
-in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
-
+in_fq_1=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/HEK293/RNA_seq/Raw_sequences/SRR2549079_1.fastq
+in_fq_2=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/HEK293/RNA_seq/Raw_sequences/SRR2549079_2.fastq
 
 #---------------------------------------------------
 
@@ -77,7 +76,6 @@ in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
 	cl_threads=24
 
 	# Specifies the library preparation. Chosse: fr-unstranded (e.g. unstranded Illumina TruSeq), fr_firststrand (dUTP, NSR, NNSR) , etc.
-	librarytype=fr-unstranded
-
+	librarytype=fr-firststrand
 
 
