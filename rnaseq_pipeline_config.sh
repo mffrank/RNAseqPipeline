@@ -7,8 +7,8 @@ reference=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/da
 # Genome annotation File (full path)
 annotation=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/Human_genome/GRCh38/Gencode_v25/gencode.v25.primary_assembly.annotation.gtf
 #Fastq input Files (do not need to be trimmed), if single-end reads second file is ignored (full path)
-in_fq_1=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/HeLa/RNA_seq/Raw_sequences/Yansheng_Hela-8_AGTTCC_L002_R1_001.fastq
-in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
+#in_fq_1=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/HeLa/RNA_seq/Raw_sequences/Yansheng_Hela-8_AGTTCC_L002_R1_001.fastq
+#in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
 
 
 #---------------------------------------------------
@@ -19,15 +19,15 @@ in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
 	tr_threads=24
 
 	#Define adapter properties (adapter fasta is distributed with trimmomatic under http://www.usadellab.org/cms/?page=trimmomatic)
-	#ILLUMINACLIP:<fastaWithAdaptersEtc>:<seed mismatches>:<palindrome clip threshold>:<simple clip threshold> ;seedMismatches: specifies the maximum mismatch count which will still allow a full match to be performed;palindromeClipThreshold: specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment.;simpleClipThreshold: specifies how accurate the match between any adapter etc. sequence must be against a read. 
+	#ILLUMINACLIP:<fastaWithAdaptersEtc>:<seed mismatches>:<palindrome clip threshold>:<simple clip threshold> ;seedMismatches: specifies the maximum mismatch count which will still allow a full match to be performed;palindromeClipThreshold: specifies how accurate the match between the two 'adapter ligated' reads must be for PE palindrome read alignment.;simpleClipThreshold: specifies how accurate the match between any adapter etc. sequence must be against a read.
 	ILLUMINACLIP=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/Trimmomatic_adapters/TruSeq3-SE.fa:2:30:10
-	
+
 	#LEADING=<quality>; quality: Specifies the minimum quality required to keep a base
-	LEADING=3 
+	LEADING=3
 
 	#TRAILING=<quality>; quality: Specifies the minimum quality required to keep a base
 	TRAILING=3
- 
+
 	#SLIDINGWINDOW=<windowSize>:<requiredQuality>; windowSize: specifies the number of bases to average across ; requiredQuality: specifies the average quality required.
 	SLIDINGWINDOW=4:15
 
@@ -44,7 +44,7 @@ in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
 	st_threads=48
 
 	# speciﬁes path to the directory (henceforth called ”genome directory” where thevgenome indices are stored. This directory has to be created (with mkdir) before STAR run and needs to writing permissions
-	genomeDir=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/Human_genome/GRCh38/Gencode_v25/STAR_genome_index
+	genomeDir=/nfs/nas21.ethz.ch/nas/fs2102/biol_ibt_usr_s1/mfrank/Master_Project/data/Human_genome/GRCh38/Gencode_v25/STAR_genome_index/
 
 	# specifies one or more FASTA ﬁles with the genome reference sequences
 	genomeFastaFiles=$reference
@@ -78,6 +78,3 @@ in_fq_2=/cluster/scratch/mfrank/SRR2549078_2.fastq
 
 	# Specifies the library preparation. Chosse: fr-unstranded (e.g. unstranded Illumina TruSeq), fr_firststrand (dUTP, NSR, NNSR) , etc.
 	librarytype=fr-unstranded
-
-
-
