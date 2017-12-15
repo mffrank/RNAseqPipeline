@@ -200,7 +200,7 @@ if [ $PAIRED -eq 1 ]; then
 
 		# Cufflinks assembly
 		echo "Submitting Cufflinks Aglinment job"
-		bsub -n $cl_threads -J job7 -w "done(job6)" -o $OUT_DIR/cufflinks/${RUN_NAME}_cufflinks_assembly_euler_log.txt -e $OUT_DIR/cufflinks/${RUN_NAME}_cufflinks_assembly_log.txt cufflinks -p $cl_threads -G $annotation -b $reference--library-type $librarytype $OUT_DIR/samtools/${RUN_NAME}Aligned.out_sorted.bam --output-dir $OUT_DIR/cufflinks
+		bsub -n $cl_threads -J job7 -w "done(job6)" -o $OUT_DIR/cufflinks/${RUN_NAME}_cufflinks_assembly_euler_log.txt -e $OUT_DIR/cufflinks/${RUN_NAME}_cufflinks_assembly_log.txt cufflinks -p $cl_threads -G $annotation -b $reference --library-type $librarytype $OUT_DIR/samtools/${RUN_NAME}Aligned.out_sorted.bam --output-dir $OUT_DIR/cufflinks
 
 		# Conversion to transcriptome FASTA
 		echo "Submitting Transcriptome-GTF to Fasta conversion job"
