@@ -100,7 +100,7 @@ if [ ! -d ${OUT_DIR}/cufflinks ]; then err "OUT_DIR variable seems not to have b
 #Loading requred modules
 
 module load java
-module load boost
+module load boost/1.55.0
 module load gdc
 module load fastqc
 module load trimmomatic
